@@ -3,14 +3,8 @@ import { NEWS_SOURCES } from '../constants'
 import actionTypes from './actionTypes'
 
 const { v2: newsapi } = new NewsAPI('c66744023d5d4921b3319b7e8aedfbce')
-
-export {
-  fetchNews,
-  loadMore
-}
-
 const fetchNews = options => dispatch => {
-  newsapi.everything({
+  return newsapi.everything({
     ...options,
     sources: NEWS_SOURCES
   })
@@ -23,14 +17,36 @@ const fetchNews = options => dispatch => {
 }
 
 const loadMore = () => (dispatch, getState) => {
-  newsapi.everything({
+  const state = getState()
+  const options = {
     sources: NEWS_SOURCES,
-    page: getState().news.page + 1
-  })
+    page: state.news.page + 1
+  }
+
+  if (state.news.search) {
+    options.q = state.news.search
+  }
+
+  return newsapi.everything(options)
   .then(response => {
     dispatch({
       type: actionTypes.NEWS_LOAD_MORE_SUCCESS,
       articles: response.articles
     })
   })
+}
+
+const search = keyword => dispatch => {
+  dispatch(fetchNews({ q: keyword })).then(() => {
+    dispatch({
+      type: actionTypes.SEARCH_SUCCESS,
+      keyword
+    })
+  })
+}
+
+export {
+  fetchNews,
+  loadMore,
+  search
 }

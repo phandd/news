@@ -1,18 +1,30 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import Articles from '../components/Articles'
-import { fetchNews, loadMore } from '../actions'
+import { fetchNews, loadMore, search } from '../actions'
 
-class NewsContainer extends Component {
-  componentDidMount() {
-    this.props.fetchNews()
+const NewsContainer = props => {
+  let timeout
+  const debouncedSearch = keyword => {
+    if (!timeout) {
+      timeout = setTimeout(() => {
+        props.search(keyword)
+      }, 300);
+    } else {
+      clearTimeout(timeout)
+      timeout = setTimeout(() => {
+        props.search(keyword)
+      }, 300);
+    }
   }
 
-  render() {
-    return (
-      <Articles {...this.props} />
-    )
-  }
+  useEffect(() => {
+    props.fetchNews()
+  }, [])
+
+  return (
+    <Articles {...props} search={debouncedSearch} />
+  )
 }
 
 const mapStateToProps = state => ({
@@ -21,7 +33,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   fetchNews,
-  loadMore
+  loadMore,
+  search,
 }
 
 export default connect(

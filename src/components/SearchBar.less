@@ -1,0 +1,26 @@
+.search-bar {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  .form-row {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .search-input {
+    position: relative;
+
+    i {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      cursor: pointer;
+      color: #9E9E9E;
+    }
+
+    &.empty {
+      i {
+        visibility: hidden;
+      }
+    }
+  }
+}

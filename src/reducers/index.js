@@ -3,7 +3,8 @@ import actionTypes from '../actions/actionTypes'
 const defaultState = {
   news: {
     articles: [],
-    page: 0
+    page: 0,
+    search: ''
   },
   history: []
 }
@@ -27,6 +28,15 @@ export default (state = defaultState, action) => {
           ...state.news,
           articles: [...state.news.articles, ...action.articles],
           page: state.news.page + 1
+        }
+      }
+
+    case actionTypes.SEARCH_SUCCESS:
+      return {
+        ...state,
+        news: {
+          ...state.news,
+          search: action.keyword
         }
       }
   

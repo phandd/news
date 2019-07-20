@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import Article from './Article'
+import SearchBar from './SearchBar'
 
 class Articles extends Component {
   constructor(props) {
     super(props)
-    this.scrollElement = React.createRef()
     this.attachScrollListener = this.attachScrollListener.bind(this)
     this.scrollListener = this.scrollListener.bind(this)
   }
@@ -43,11 +43,14 @@ class Articles extends Component {
   }
 
   render() {
-    const articles = this.props.articles.map(article => <Article article={article} key={article.url} />)
+    const articles = this.props.articles.map((article, index) => <Article article={article} key={article.url + index} />)
 
     return (
-      <div ref={this.scrollElement}> 
-        {articles}
+      <div>
+        <SearchBar doSearch={this.props.search} />
+        <div>
+          {articles}
+        </div>
       </div>
     )
   }
