@@ -32,7 +32,7 @@ const NavBarContainer = props => {
           <li>
             <NavLink to={'/history'} activeClassName="active" className="nav-link">
               History
-              </NavLink>
+            </NavLink>
           </li>
         </ul>
         <SearchBar doSearch={debouncedSearch} />

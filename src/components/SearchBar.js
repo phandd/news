@@ -13,9 +13,9 @@ const Search = ({
   }
 
   return (
-    <form className="form-inline mt-2">
+    <div className="form-inline mt-2">
       <input type="text" className="form-control mb-2" id="inlineFormInput" value={search} onChange={e => handleSearch(e.target.value)} placeholder="Filter..." />
-    </form>
+    </div>
   )
 }
 

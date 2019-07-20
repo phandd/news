@@ -4,6 +4,10 @@ import actionTypes from './actionTypes'
 
 const { v2: newsapi } = new NewsAPI('57b51d7cd3204e2da44fea3dd47748f2')
 const fetchNews = options => dispatch => {
+  dispatch({
+    type: actionTypes.NEWS_FETCHING
+  })
+
   return newsapi.everything({
     ...options,
     sources: NEWS_SOURCES

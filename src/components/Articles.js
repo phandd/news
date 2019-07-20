@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Article from './Article'
+import Spinner from './Spinner'
 
 class Articles extends Component {
   constructor(props) {
@@ -58,6 +59,9 @@ class Articles extends Component {
 
     return (
       <div>
+        {
+          this.props.fetching && <Spinner />
+        }
         <div>
           {articles}
         </div>

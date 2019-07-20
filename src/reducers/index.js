@@ -4,7 +4,8 @@ const defaultState = {
   news: {
     articles: [],
     page: 0,
-    search: ''
+    search: '',
+    fetching: true
   },
   history: {
     articles: []
@@ -13,12 +14,23 @@ const defaultState = {
 
 export default (state = defaultState, action) => {
   switch (action.type) {
+    case actionTypes.NEWS_FETCHING:
+      return {
+        ...state,
+        news: {
+          ...state.news,
+          articles: [],
+          fetching: true
+        }
+      }
+
     case actionTypes.NEWS_FETCH_SUCCESS:
       return {
         ...state,
         news: {
           ...state.news,
           articles: action.articles,
+          fetching: false,
           page: 1
         }
       }

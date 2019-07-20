@@ -1,22 +1,26 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import Articles from '../components/Articles'
+import Nothing from '../components/Nothing'
 import { fetchNews, loadMore, openArticle } from '../actions'
 
 const NewsContainer = props => {
+  const { fetchNews, articles, fetching } = props
+
   useEffect(() => {
-    props.fetchNews()
-  }, [])
+    fetchNews()
+  }, [fetchNews])
 
   return (
     <div>
-      <Articles {...props} />
+      {(articles.length || fetching) ? <Articles {...props} /> : <Nothing />}
     </div>
   )
 }
 
 const mapStateToProps = state => ({
-  articles: state.news.articles
+  articles: state.news.articles,
+  fetching: state.news.fetching
 })
 
 const mapDispatchToProps = {
