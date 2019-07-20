@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { ROUTES } from '../constants'
-import News from '../components/News'
+import NewsContainer from '../containers/NewsContainer'
 import History from '../components/History'
 
 const Root = ({ store }) => (
@@ -11,7 +11,7 @@ const Root = ({ store }) => (
     <div>
       <Switch>
         <Redirect exact from="/" to={ROUTES.news} />
-        <Route exact path={ROUTES.news} component={News} />
+        <Route exact path={ROUTES.news} component={NewsContainer} />
         <Route path={ROUTES.history} component={History} />
       </Switch>
     </div>
