@@ -1,0 +1,40 @@
+
+
+.article-wrapper {
+  margin: 20px;
+  border-top: 1px solid rgb(217, 217, 217);
+  box-sizing: border-box;
+
+  .article {
+    display: flex;
+    justify-items: center;
+    height: 100px;
+  }
+
+  .article-image {
+    padding-top: 10px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .article-data {
+    transition: all 0.2s;
+
+    &:hover {
+      color: #c00;
+    }
+  }
+
+  .article-source {
+    margin-top: 5px;
+    color: rgb(51, 51, 51);
+    font-weight: 800;
+  }
+
+  .article-description {
+    font-style: italic;
+  }
+}
