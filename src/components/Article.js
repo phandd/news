@@ -9,18 +9,16 @@ const Article = ({ article, openArticle }) => {
   }
 
   return (
-    <div className="article-wrapper">
-      <div className="row">
-        <div className="col-md-10 article">
-          <div className="col-md-2 article-image">
-            <img src={urlToImage} alt={title} className="img-responsive"></img>
-          </div>
-          <div className="col-md-10">
-            <div className="article-data" onClick={articleClickHandler}>
-              <h5>{title}</h5>
-              <p className="article-description">{description}</p>
-              <span className="article-source">{source.name}</span>
-            </ div>
+    <div className="col-md-6 offset-md-3">
+      <div className="article-wrapper">
+        <div className="article-image" onClick={articleClickHandler}>
+          <img src={urlToImage} alt={title} className="img-responsive"></img>
+        </div>
+        <div className="">
+          <div className="article-data" onClick={articleClickHandler}>
+            <h4>{title}</h4>
+            <p>{description}</p>
+            <span className="article-source small">{source.name}</span>
           </div>
         </div>
       </div>

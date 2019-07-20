@@ -4,7 +4,9 @@ import Articles from '../components/Articles'
 
 const NewsContainer = props => {
   return (
-    <Articles {...props} />
+    <div>
+      {props.articles.length ? <Articles {...props} /> : <div className="history-empty">History is empty</div>}
+    </div>
   )
 }
 

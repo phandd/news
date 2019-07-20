@@ -9,15 +9,21 @@ class Articles extends Component {
   }
 
   componentDidMount() {
-    this.attachScrollListener()
+    if (this.props.loadMore) {
+      this.attachScrollListener()
+    }
   }
 
   componentDidUpdate() {
-    this.attachScrollListener()
+    if (this.props.loadMore) {
+      this.attachScrollListener()
+    }
   }
 
   componentWillUnmount() {
-    this.detachScrollListener()
+    if (this.props.loadMore) {
+      this.detachScrollListener()
+    }
   }
 
   scrollListener() {

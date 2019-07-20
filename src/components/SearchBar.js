@@ -13,13 +13,9 @@ const Search = ({
   }
 
   return (
-    <div className="search-bar">
-      <div className="form-row">
-          <div className={`col-md-4 col-6 search-input ${!search ? 'empty' : ''}`}>
-            <input type="text" className="form-control mb-2" id="inlineFormInput" value={search} onChange={e => handleSearch(e.target.value)} placeholder="Filter..." />
-          </div>
-        </div>
-    </div>
+    <form className="form-inline mt-2">
+      <input type="text" className="form-control mb-2" id="inlineFormInput" value={search} onChange={e => handleSearch(e.target.value)} placeholder="Filter..." />
+    </form>
   )
 }
 

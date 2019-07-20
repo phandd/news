@@ -5,10 +5,12 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import { ROUTES } from '../constants'
 import NewsContainer from '../containers/NewsContainer'
 import HistoryContainer from '../containers/HistoryContainer'
+import NavBarContainer from './NavBarContainer'
 
 const Root = ({ store }) => (
   <Provider store={store}>
     <div>
+      <NavBarContainer />
       <Switch>
         <Redirect exact from="/" to={ROUTES.news} />
         <Route exact path={ROUTES.news} component={NewsContainer} />

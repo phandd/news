@@ -1,18 +1,19 @@
 
 
 .article-wrapper {
-  margin: 20px;
+  background-color: #fff;
   border-top: 1px solid rgb(217, 217, 217);
-  box-sizing: border-box;
+  margin-top: 40px;
+  padding-bottom: 5px;
+  box-shadow: 0 2px 3px -2px #888;
 
   .article {
     display: flex;
     justify-items: center;
-    height: 100px;
   }
 
   .article-image {
-    padding-top: 10px;
+    cursor: pointer;
 
     img {
       width: 100%;
@@ -21,21 +22,21 @@
   }
 
   .article-data {
-    transition: all 0.2s;
     cursor: pointer;
+    transition: all 0.2s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
 
     &:hover {
-      color: #c00;
+      color: #0080c3;
     }
   }
 
   .article-source {
-    margin-top: 5px;
     color: rgb(51, 51, 51);
     font-weight: 800;
-  }
-
-  .article-description {
-    font-style: italic;
   }
 }
