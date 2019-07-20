@@ -1,9 +1,8 @@
 import React from 'react'
-import './Spinner.less'
 
 const Spinner = () => {
   return (
-    <div className="spinner">
+    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px'}}>
       <div className="spinner-border text-secondary" role="status">
         <span className="sr-only">Loading...</span>
       </div>
