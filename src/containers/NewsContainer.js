@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import News from '../components/News'
-import { fetchNews } from '../actions'
+import Articles from '../components/Articles'
+import { fetchNews, loadMore } from '../actions'
 
 class NewsContainer extends Component {
   componentDidMount() {
@@ -10,17 +10,18 @@ class NewsContainer extends Component {
 
   render() {
     return (
-      <News news={this.props.news} />
+      <Articles {...this.props} />
     )
   }
 }
 
 const mapStateToProps = state => ({
-  news: state.news
+  articles: state.news.articles
 })
 
 const mapDispatchToProps = {
-  fetchNews
+  fetchNews,
+  loadMore
 }
 
 export default connect(
