@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Article from './Article'
-import SearchBar from './SearchBar'
 
 class Articles extends Component {
   constructor(props) {
@@ -43,11 +42,16 @@ class Articles extends Component {
   }
 
   render() {
-    const articles = this.props.articles.map((article, index) => <Article article={article} key={article.url + index} />)
+    const articles = this.props.articles.map((article, index) =>
+      <Article
+        article={article}
+        key={article.url + index}
+        openArticle={this.props.openArticle}
+      />
+    )
 
     return (
       <div>
-        <SearchBar doSearch={this.props.search} />
         <div>
           {articles}
         </div>

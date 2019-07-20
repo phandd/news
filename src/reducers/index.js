@@ -6,7 +6,9 @@ const defaultState = {
     page: 0,
     search: ''
   },
-  history: []
+  history: {
+    articles: []
+  }
 }
 
 export default (state = defaultState, action) => {
@@ -37,6 +39,14 @@ export default (state = defaultState, action) => {
         news: {
           ...state.news,
           search: action.keyword
+        }
+      }
+  
+    case actionTypes.OPEN_ARTICLE:
+      return {
+        ...state,
+        history: {
+          articles: [action.article, ...state.history.articles]
         }
       }
   

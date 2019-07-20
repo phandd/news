@@ -2,7 +2,7 @@ import NewsAPI from 'newsapi'
 import { NEWS_SOURCES } from '../constants'
 import actionTypes from './actionTypes'
 
-const { v2: newsapi } = new NewsAPI('c66744023d5d4921b3319b7e8aedfbce')
+const { v2: newsapi } = new NewsAPI('57b51d7cd3204e2da44fea3dd47748f2')
 const fetchNews = options => dispatch => {
   return newsapi.everything({
     ...options,
@@ -45,8 +45,14 @@ const search = keyword => dispatch => {
   })
 }
 
+const openArticle = article => ({
+  type: actionTypes.OPEN_ARTICLE,
+  article
+})
+
 export {
   fetchNews,
   loadMore,
-  search
+  search,
+  openArticle
 }

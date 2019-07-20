@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { ROUTES } from '../constants'
 import NewsContainer from '../containers/NewsContainer'
-import History from '../components/History'
+import HistoryContainer from '../containers/HistoryContainer'
 
 const Root = ({ store }) => (
   <Provider store={store}>
@@ -12,7 +12,7 @@ const Root = ({ store }) => (
       <Switch>
         <Redirect exact from="/" to={ROUTES.news} />
         <Route exact path={ROUTES.news} component={NewsContainer} />
-        <Route path={ROUTES.history} component={History} />
+        <Route path={ROUTES.history} component={HistoryContainer} />
       </Switch>
     </div>
   </Provider>

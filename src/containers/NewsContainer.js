@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import Articles from '../components/Articles'
-import { fetchNews, loadMore, search } from '../actions'
+import SearchBar from '../components/SearchBar'
+import { fetchNews, loadMore, search, openArticle } from '../actions'
 
 const NewsContainer = props => {
   let timeout
@@ -23,7 +24,10 @@ const NewsContainer = props => {
   }, [])
 
   return (
-    <Articles {...props} search={debouncedSearch} />
+    <div>
+        <SearchBar doSearch={debouncedSearch} />
+        <Articles {...props} />
+    </div>
   )
 }
 
@@ -35,6 +39,7 @@ const mapDispatchToProps = {
   fetchNews,
   loadMore,
   search,
+  openArticle
 }
 
 export default connect(
