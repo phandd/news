@@ -1,0 +1,3 @@
+export default {
+  NEWS_FETCH_SUCCESS: 'NEWS_FETCH_SUCCESS'
+}
