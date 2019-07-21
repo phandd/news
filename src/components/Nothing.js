@@ -1,9 +1,8 @@
 import React from 'react'
-import './Nothing.less'
 
 const Nothing = () => {
   return (
-    <div className="nothing">
+    <div style={{ fontStyle: 'italic', textAlign: 'center', marginTop: '40px'}}>
       Nothing here ;)
     </div>
   )
