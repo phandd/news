@@ -36,6 +36,20 @@ docker-compose down --rmi 'all'
 
 If you have any problem on starting the app, please contact me via Skype id: `live:dangdphan`.
 
+## Deploy to heroku
+1. install [heroku cli](https://devcenter.heroku.com/articles/heroku-cli)
+2. Navigate to source code directory and run:
+```
+heroku create
+```
+3. After step 2, a heroku git remote repository is associated with the local repository, to deploy, simply push the code to the heroku remote:
+```
+git push heroku deploy:master
+```
+The app should be available on the app url provided by heroku ([heroku doc](https://devcenter.heroku.com/articles/getting-started-with-nodejs#deploy-the-app)).
+
+**Note:** If you have any update from `master` branch, remember to rebase the `deploy` branch onto `master` branch before deploying the code.
+
 Thank you for your time!
 
 Dang Dien PHAN
