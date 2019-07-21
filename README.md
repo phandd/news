@@ -1,68 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## News
+The React app to collect and display news from CNN and The Newyork Times
 
-## Available Scripts
+## Tech stack
+- **ReactJs** for Web app
+- **create-react-app** for Reactjs app boostraping
+- **Less** for CSS preprocessor
+- **Docker** for deployment
+- **newsapi client** to communicate with newsapi
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+### Prerequisites:
+- `docker-compose`: If you don't have `docker-compose` on your system, checkout the [installation guide](https://docs.docker.com/compose/install/) from Docker. Note that `docker-compose` relies on Docker Engine, so maybe you will need to install Docker also.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- You should not have any service running on port `80` on your system as it's where the frontend app exposed.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Start the app
 
-### `npm test`
+To boostrap and run the app, navigating to the source code directory and simply run:
+```
+docker-compose up
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+the app should be available on `http://localhost` in a short time, after `docker-compose` make it's job done by bringing up all the services.
 
-### `npm run build`
+After reviewing the app, you can graceful shutdown all services by running:
+```
+docker-compose down --rmi 'all'
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you have any problem on starting the app, please contact me via Skype id: `live:dangdphan`.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Thank you for your time!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Dang Dien PHAN
