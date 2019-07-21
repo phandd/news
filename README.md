@@ -8,7 +8,12 @@ The React app to collect and display news from CNN and The Newyork Times
 - **Docker** for deployment
 - **newsapi client** to communicate with newsapi
 
-## Installation
+## Demo
+The app is available on heroku server
+https://murmuring-taiga-64448.herokuapp.com
+
+## Install locally
+If you want to try the app on your local machine, please follow these steps:
 
 ### Prerequisites:
 - `docker-compose`: If you don't have `docker-compose` on your system, checkout the [installation guide](https://docs.docker.com/compose/install/) from Docker. Note that `docker-compose` relies on Docker Engine, so maybe you will need to install Docker also.
