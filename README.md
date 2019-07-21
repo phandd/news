@@ -4,6 +4,7 @@ The React app to collect and display news from CNN and The Newyork Times
 ## Tech stack
 - **ReactJs** for Web app
 - **create-react-app** for Reactjs app boostraping
+- **redux** for state management
 - **Less** for CSS preprocessor
 - **Docker** for deployment
 - **newsapi client** to communicate with newsapi
